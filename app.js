@@ -1,38 +1,3 @@
-if (typeof global.DOMMatrix === 'undefined') {
-  global.DOMMatrix = class MockDOMMatrix {
-    constructor() {}
-  };
-}
-
-if (typeof global.ImageData === 'undefined') {
-  global.ImageData = class MockImageData {
-    constructor(data, width, height) {
-      if (typeof width === 'number' && typeof height === 'number') {
-        this.width = width;
-        this.height = height;
-        this.data = new Uint8ClampedArray(width * height * 4); 
-      }
-    }
-  };
-}
-
-if (typeof global.Path2D === 'undefined') {
-  global.Path2D = class MockPath2D {
-    constructor() {}
-  };
-}
-
-if (typeof global.document === 'undefined') {
-  global.document = {};
-}
-
-if (typeof global.Worker === 'undefined') {
-    global.Worker = class MockWorker {
-        constructor() {}
-    };
-}
-
-
 import { GlobalWorkerOptions } from "pdfjs-dist/legacy/build/pdf.mjs";
 import path from 'path';
 import { fileURLToPath } from 'url';
